@@ -4,10 +4,9 @@
 """
     © Joël Cugnoni, September 2006 - original code, www.caelinux.com
     © Ihor Mirzov, August 2019 - refactoring
-    Distributed under GNU General Public License, version 3.
+    Distributed under GNU General Public License v3.0
 
     Writes FEM nodes, elements and groups (node and element sets) into INP file.
-    Only linear and quadratic beams, tri, quads, tetra, hexa and wedge are supported.
 """
 
 

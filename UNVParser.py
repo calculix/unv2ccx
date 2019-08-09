@@ -4,7 +4,7 @@
 """
     © Joël Cugnoni, September 2006 - original code, www.caelinux.com
     © Ihor Mirzov, August 2019 - refactoring
-    Distributed under GNU General Public License, version 3.
+    Distributed under GNU General Public License v3.0
 
     This is a set of objects & functions to read a Universal File
     into a simple FEM object structure in order to simplify the

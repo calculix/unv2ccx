@@ -2,9 +2,10 @@
 
 """
     © Ihor Mirzov, April 2019
-    Distributed under GNU General Public License, version 3.
+    Distributed under GNU General Public License v3.0
 
-    python3 tests.py
+    Usage:
+        python3 tests.py
 """
 
 import subprocess, os, clean

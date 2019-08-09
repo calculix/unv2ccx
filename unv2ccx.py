@@ -3,7 +3,7 @@
 
 """
     © Ihor Mirzov, August 2019
-    Distributed under GNU General Public License, version 3.
+    Distributed under GNU General Public License v3.0
 
     Converts UNV file from Salome to CalculiX INP mesh: reads UNV_file,
     creates an internal FEM object, then writes the INP_file.

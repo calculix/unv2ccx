@@ -3,7 +3,7 @@
 
 """
     © Ihor Mirzov, August 2019
-    Distributed under GNU General Public License, version 3.
+    Distributed under GNU General Public License v3.0
 
     Routine methods for cleaning up temporary/unused files/folders.
 """
