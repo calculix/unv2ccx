@@ -12,7 +12,7 @@ creates an internal FEM object, then writes the INP_file.
 
 This converter is based on Joël's Cugnoni UNV parser written in 2007 and available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams.
 
-See folder [tests-elements](./tests-elements) for list of tested elements. All generated INP files are processed by [CalculiX CAE](https://github.com/imirzov/ccx_cae) without any errors.
+See folder [tests-elements](./tests-elements) for list of tested UNV elements. All generated INP files are processed by [CalculiX CAE](https://github.com/imirzov/ccx_cae) without any errors.
 
 <br/><br/>
 
@@ -29,6 +29,18 @@ The main script is [unv2ccx.py](unv2ccx.py), it depends on:
 Usage is simple:
 
     python3 unv2ccx.py UNV_file INP_file
+
+<br/><br/>
+
+
+
+# Examples
+
+UNV 115 element converted to C3D8:
+![UNV 115](./tests-elements/115.png "UNV 115")
+
+UNV 118 element converted to C3D10:
+![UNV 118](./tests-elements/118.png "UNV 118")
 
 <br/><br/>
 
