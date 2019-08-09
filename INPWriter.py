@@ -15,16 +15,15 @@ PADDING = ' '*4 # four spaces
 
 
 # Main function
-def write(FEM, INP_file, reduced):
+def write(FEM, filename):
 
-    with open(INP_file, 'w') as f:
+    with open(filename[:-4]+'.inp', 'w') as f: # change extension .unv -> .inp
 
         # Nodes
-        f.write('*NODE, NSET=NALL' + os.linesep)
+        f.write('*NODE, NSET=NALL\n')
         for node in FEM.nodes:
-            f.write(PADDING + '{:d}, {:.10e}, {:.10e}, {:.10e}'\
-                .format(node.num, node.coords[0], node.coords[1], node.coords[2]) +\
-                    os.linesep)
+            f.write(PADDING + '{:d}, {:.10e}, {:.10e}, {:.10e}\n'\
+                .format(node.num, node.coords[0], node.coords[1], node.coords[2]))
 
         # Split element list by types
         elements = {}
@@ -38,7 +37,7 @@ def write(FEM, INP_file, reduced):
 
         # Write element groups by type
         for etype in elements.keys():
-            f.write('*ELEMENT, TYPE={0}, ELSET={0}'.format(etype) + os.linesep)
+            f.write('*ELEMENT, TYPE={0}, ELSET={0}\n'.format(etype))
 
             # Select the appropriate map between the nodes
             themap = element_connectivity(etype)
@@ -48,10 +47,10 @@ def write(FEM, INP_file, reduced):
                 f.write(PADDING + '{:d}, '.format(e.num))
                 for i in range(len(e.nodes)):
                     if i > 0 and i % 10 == 0:
-                        f.write(os.linesep + PADDING)
+                        f.write('\n' + PADDING)
                     node_number = themap[i] - 1
                     f.write('{:d}, '.format(e.nodes[node_number]))
-                f.write(os.linesep)
+                f.write('\n')
 
         # Write node sets
         for group in FEM.nsets:
@@ -68,9 +67,9 @@ def write(FEM, INP_file, reduced):
 def writeGroup(f, group):
     for i in range(group.nitems):
         if i % 8 == 0:
-            f.write(os.linesep + PADDING)
+            f.write('\n' + PADDING)
         f.write('{:d}, '.format(group.items[i]))
-    f.write(os.linesep)
+    f.write('\n')
 
 
 # Convert UNV element type to CalculiX

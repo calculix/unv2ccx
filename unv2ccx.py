@@ -32,25 +32,18 @@ if __name__ == '__main__':
 
     # Command line parameters
     parser = argparse.ArgumentParser()
-    parser.add_argument('unv', type=str,
-                        help='.unv file name',
+    parser.add_argument('filename', type=str,
+                        help='.unv file name (with extension)',
                         default='')
-    parser.add_argument('inp', type=str,
-                        help='.inp file name',
-                        default='')
-    parser.add_argument('-r', type=str,
-                        help='reduce elements or no: R (default) or N',
-                        default='R')
     args = parser.parse_args()
 
     # Configure logging
-    logging.basicConfig(level = logging.DEBUG, format = '%(levelname)s: %(message)s')
-    logging.info('Converting {}...'.format(os.path.basename(args.unv)))
+    logging.basicConfig(level = logging.INFO, format = '%(levelname)s: %(message)s')
 
     # Parse UNV file
-    FEM = UNVParser(args.unv).parse()
+    FEM = UNVParser(args.filename).parse()
 
     # Write INP file
-    INPWriter.write(FEM, args.inp, args.r)
+    INPWriter.write(FEM, args.filename)
 
-    logging.info('Done!' + os.linesep)
+    logging.info(os.path.basename(args.filename) + ' done!\n')

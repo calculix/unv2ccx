@@ -11,25 +11,30 @@
 import subprocess, os, clean
 
 
-# List all .inp-files here and in all subdirectories
-def listAllFiles(startFolder, fmt):
+# List all .ext-files here and in all subdirectories
+def listAllFiles(startFolder, ext):
     all_files = []
     for f in os.listdir(startFolder): # iterate over files and folders in current directory
         f = os.path.abspath(startFolder + '/' + f)
         if os.path.isdir(f): # if folder
-            for ff in listAllFiles(f, fmt):
+            for ff in listAllFiles(f, ext):
                 all_files.append(ff)
-        elif f[-4:] == fmt:
-            all_files.append(f[:-4])
+        elif f.endswith(ext):
+            all_files.append(f) # don't cut extension
     return all_files
 
 
 if (__name__ == '__main__'):
     clean.screen()
+    extension = ('.exe' if os.name=='nt' else '') # file extension in OS
 
     # Convert calculation results
-    for modelname in listAllFiles('./tests-elements', '.unv'):
-        subprocess.run('python3 unv2ccx.py {0}.unv {0}.inp'.format(modelname), shell=True)
+    for filename in listAllFiles('./tests-elements', '.unv'):
+        # subprocess.run('python3 unv2ccx.py ' + filename, shell=True)
+        if os.name == 'nt':
+            subprocess.run('unv2ccx.exe ' + filename, shell=True)
+        else:
+            subprocess.run('./unv2ccx ' + filename, shell=True)
         # break # one file only
 
     clean.cache()
