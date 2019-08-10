@@ -9,14 +9,7 @@
     creates an internal FEM object, then writes the INP_file.
 
     Usage:
-        python3 unv2ccx.py unv inp [-h]
-    Positional arguments:
-        unv         .unv file name
-        inp         .inp file name
-    Optional arguments:
-        -h          show help message and exit
-    Example:
-        python3 unv2ccx.py ./tests-elements/116.unv ./tests-elements/116.inp
+        python3 unv2ccx.py ./tests-elements/116.unv
 """
 
 
