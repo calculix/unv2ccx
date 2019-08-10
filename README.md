@@ -28,7 +28,7 @@ Download Linux and Windows binaries from the [releases page](https://github.com/
 Result INP-file name is the same as UNV-file name. So only one argument should be passed to the converter:
 
     in Linux:       ./unv2ccx file.unv
-    in Windows:     ./unv2ccx.exe file.unv
+    in Windows:     unv2ccx.exe file.unv
     crossplatform:  python3 unv2ccx.py file.unv
 
 For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. The main script is *unv2ccx.py*, it depends on *UNVParser.py* and *INPWriter.py* - other files you won't need.
@@ -53,10 +53,9 @@ UNV 118 element converted to C3D10:
 
 Please, you may:
 
-- simply use this converter
-- ask questions
-- post issues here, on the GitHub
-- attach your models and screenshots
+- Simply use this software and ask questions.
+- Share your models and screenshots.
+- Report problems by [posting issues](./issues).
 
 <br/><br/>
 
