@@ -20,7 +20,7 @@ def listAllFiles(startFolder, ext):
             for ff in listAllFiles(f, ext):
                 all_files.append(ff)
         elif f.endswith(ext):
-            all_files.append(f) # don't cut extension
+            all_files.append(f) # with extension
     return all_files
 
 

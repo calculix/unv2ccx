@@ -7,7 +7,7 @@ Distributed under GNU General Public License v3.0
 
 # Salome universal to Calculix converter (unv to inp)
 
-Converts [Salome](https://www.salome-platform.org/) .unv mesh to [CalculiX](http://dhondt.de/) .inp format.
+Converts [Salome](https://www.salome-platform.org/) .unv file to [CalculiX](http://dhondt.de/) .inp format.
 
 This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests-elements](./tests-elements) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX CAE](https://github.com/imirzov/ccx_cae) without any errors.
 
@@ -40,10 +40,10 @@ For the last command you'll need [Python 3](https://www.python.org/downloads/) t
 # Examples
 
 UNV 115 element converted to C3D8:  
-![UNV 115](./tests-elements/115.png "UNV 115")
+![UNV 115](./tests/115.png "UNV 115")
 
 UNV 118 element converted to C3D10:  
-![UNV 118](./tests-elements/118.png "UNV 118")
+![UNV 118](./tests/118.png "UNV 118")
 
 <br/><br/>
 
