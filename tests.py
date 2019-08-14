@@ -21,7 +21,7 @@ def listAllFiles(startFolder, ext):
                 all_files.append(ff)
         elif f.endswith(ext):
             all_files.append(f) # with extension
-    return all_files
+    return sorted(all_files)
 
 
 if (__name__ == '__main__'):

@@ -17,7 +17,7 @@ This converter is based on Joël's Cugnoni UNV parser available with [CalculiX L
 
 # Download
 
-Download Linux and Windows binaries from the [releases page](https://github.com/imirzov/unv2ccx/releases). Binaries don't need to be installed.
+Download Linux and Windows binaries from the [releases page](./releases). Binaries don't need to be installed.
 
 <br/><br/>
 
@@ -31,7 +31,7 @@ Result INP-file name is the same as UNV-file name. So only one argument should b
     in Windows:     unv2ccx.exe file.unv
     crossplatform:  python3 unv2ccx.py file.unv
 
-For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. The main script is *unv2ccx.py*, it depends on *UNVParser.py* and *INPWriter.py* - other files you won't need.
+For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. The main script is *unv2ccx.py*, it depends on *FEM.py*, *UNVParser.py* and *INPWriter.py* - other files you won't need.
 
 <br/><br/>
 

@@ -20,40 +20,8 @@
 """
 
 
-import logging
+import logging, FEM
 FLAG = '    -1'
-
-# A simple FEM object structure
-class FEM:
-    def __init__(self):
-        self.nodes = []
-        self.elements = []
-        self.nsets = []
-        self.esets = []
-
-
-# A single node object
-class Node:
-    def __init__(self, num, coords):
-        self.num = num
-        self.coords = coords
-
-
-# A single finite element object
-class Element:
-    def __init__(self, num, etype, nodes):
-        self.num = num
-        self.type = etype
-        self.nodes = nodes
-
-
-# FE group object
-class Group:
-    def __init__(self, name, gtype, items):
-        self.name = name
-        self.type = gtype
-        self.items = items
-        self.nitems = len(items)
 
 
 # Universal file parser class
@@ -63,7 +31,7 @@ class UNVParser:
     def __init__(self, filename):
         self.file = None
         self.filename = filename
-        self.FEM = FEM()
+        self.fem = FEM.FEM()
         self.sections = []
 
         # List of supported datasets and corresponding dataset handler functions
@@ -101,14 +69,14 @@ class UNVParser:
             if (sectionId in self.datasetsIds):
                 self.file.seek(offset)
                 func = self.datasetsHandlers[self.datasetsIds.index(sectionId)]
-                self.FEM = func(self.file, self.FEM)
+                self.fem = func(self.file, self.fem)
         self.file.close()
-        return self.FEM
+        return self.fem
 
 
 # Reads an UNV2411 dataset (nodes) from file and store data in FEM object
 # http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2411
-def UNV2411Reader(f, FEM):
+def UNV2411Reader(f, fem):
     while True:
         line1 = f.readline()
         line2 = f.readline().strip()
@@ -116,16 +84,16 @@ def UNV2411Reader(f, FEM):
             dataline = Line2Int(line1)
             line2 = line2.replace('D', 'E') # replacement is inserted by Prool
             coords = Line2Float(line2)
-            n = Node(dataline[0], coords)
-            FEM.nodes.append(n)
+            n = FEM.Node(dataline[0], coords)
+            fem.nodes.append(n)
         else:
             break
-    return FEM
+    return fem
 
 
 # Reads an UNV2412 dataset (elements) from file and store data in FEM object
 # http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2412
-def UNV2412Reader(f, FEM):
+def UNV2412Reader(f, fem):
     SpecialElemTypes = [11] # types of elements which are defined on 3 lines
     while True:
         line1 = f.readline()
@@ -143,16 +111,16 @@ def UNV2412Reader(f, FEM):
                 while nnodes > 8:
                     nodes.extend(Line2Int(f.readline()))
                     nnodes -= 8
-            e = Element(dataline[0], etype, nodes)
-            FEM.elements.append(e)
+            e = FEM.Element(dataline[0], etype, nodes)
+            fem.elements.append(e)
         else:
             break
-    return FEM
+    return fem
 
 
 # Reads an UNV2467 dataset (groups) from file and store data in FEM object
 # http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2467
-def UNV2467Reader(f, FEM):
+def UNV2467Reader(f, fem):
     while True:
         line1 = f.readline()
         line2 = f.readline().strip()
@@ -181,14 +149,14 @@ def UNV2467Reader(f, FEM):
 
             # Store non empty groups
             if len(nset):
-                nset = Group(group_name, 7, nset)
-                FEM.nsets.append(nset)
+                nset = FEM.Group(group_name, 7, nset)
+                fem.nsets.append(nset)
             if len(eset):
-                eset = Group(group_name, 8, eset)
-                FEM.esets.append(eset)
+                eset = FEM.Group(group_name, 8, eset)
+                fem.esets.append(eset)
         else:
             break
-    return FEM
+    return fem
 
 
 # Convert a string into a list of Float
