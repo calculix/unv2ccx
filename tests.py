@@ -31,10 +31,6 @@ if (__name__ == '__main__'):
     # Convert calculation results
     for filename in listAllFiles('./tests', '.unv'):
         subprocess.run('python3 unv2ccx.py ' + filename, shell=True)
-        # if os.name == 'nt':
-        #     subprocess.run('unv2ccx.exe ' + filename, shell=True)
-        # else:
-        #     subprocess.run('./unv2ccx ' + filename, shell=True)
         # break # one file only
 
     clean.cache()

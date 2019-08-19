@@ -39,4 +39,4 @@ if __name__ == '__main__':
     # Write INP file
     INPWriter.write(FEM, args.filename)
 
-    logging.info(os.path.basename(args.filename) + ' done!\n')
+    logging.info(os.path.basename(args.filename) + ' converted!\n')
