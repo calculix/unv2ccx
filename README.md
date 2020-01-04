@@ -1,5 +1,19 @@
-© Ihor Mirzov, August 2019  
+© Ihor Mirzov, January 2020  
 Distributed under GNU General Public License v3.0
+
+<br/><br/>
+
+
+
+---
+
+[Downloads](#downloads) |
+[How to use](#how-to-use) |
+[Screenshots](#screenshots) |
+[Your help](#your-help) |
+[For developers](#for-developers)
+
+---
 
 <br/><br/>
 
@@ -15,7 +29,7 @@ This converter is based on Joël's Cugnoni UNV parser available with [CalculiX L
 
 
 
-# Download
+# Downloads
 
 Download Linux and Windows binaries from the [releases page](https://github.com/imirzov/unv2ccx/releases). Binaries don't need to be installed.
 
@@ -37,7 +51,7 @@ For the last command you'll need [Python 3](https://www.python.org/downloads/) t
 
 
 
-# Examples
+# Screenshots
 
 UNV 115 element converted to C3D8:  
 ![UNV 115](./tests/115.png "UNV 115")
