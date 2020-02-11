@@ -23,7 +23,7 @@ Distributed under GNU General Public License v3.0
 
 Converts [Salome](https://www.salome-platform.org/) .unv file to [CalculiX](http://dhondt.de/) .inp format.
 
-This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests](./tests) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX CAE](https://github.com/imirzov/ccx_cae) without any errors.
+This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests](./tests) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX CAE](https://github.com/calculix/cae) without any errors.
 
 <br/><br/>
 
@@ -31,7 +31,7 @@ This converter is based on Joël's Cugnoni UNV parser available with [CalculiX L
 
 # Downloads
 
-Download Linux and Windows binaries from the [releases page](https://github.com/imirzov/unv2ccx/releases). Binaries don't need to be installed.
+Download Linux and Windows binaries from the [releases page](https://github.com/calculix/unv2ccx/releases). Binaries don't need to be installed.
 
 <br/><br/>
 
@@ -69,7 +69,7 @@ Please, you may:
 
 - Simply use this software and ask questions.
 - Share your models and screenshots.
-- Report problems by [posting issues](https://github.com/imirzov/unv2ccx/issues).
+- Report problems by [posting issues](https://github.com/calculix/unv2ccx/issues).
 
 <br/><br/>
 
