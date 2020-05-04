@@ -125,9 +125,7 @@ def UNV2467Reader(f, fem):
         line1 = f.readline()
         if len(line1.split())==0:
             line1 = f.readline()
-        print('line1:\n', line1)
         line2 = f.readline().strip()
-        print('line2:\n', line2)
         if len(line2) and not line1.startswith(FLAG):
             # Read group
             dataline = Line2Int(line1)
