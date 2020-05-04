@@ -123,7 +123,11 @@ def UNV2412Reader(f, fem):
 def UNV2467Reader(f, fem):
     while True:
         line1 = f.readline()
+        if len(line1.split())==0:
+            line1 = f.readline()
+        print('line1:\n', line1)
         line2 = f.readline().strip()
+        print('line2:\n', line2)
         if len(line2) and not line1.startswith(FLAG):
             # Read group
             dataline = Line2Int(line1)
@@ -138,7 +142,7 @@ def UNV2467Reader(f, fem):
                 group_items.append(dat[0:3])
                 if len(dat) > 4:
                     group_items.append(dat[4:7])
-
+            
             # Split group in node and element sets
             nset = []; eset = []
             for item in group_items:
