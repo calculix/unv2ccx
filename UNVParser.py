@@ -122,9 +122,9 @@ def UNV2412Reader(f, fem):
 # http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2467
 def UNV2467Reader(f, fem):
     while True:
+        # Read Record 1:
         line1 = f.readline()
-        if len(line1.split())==0:
-            line1 = f.readline()
+        # Read Record 2
         line2 = f.readline().strip()
         if len(line2) and not line1.startswith(FLAG):
             # Read group
@@ -133,29 +133,38 @@ def UNV2467Reader(f, fem):
             nitems = dataline[-1]
             nlines = int((nitems + 1) / 2)
 
-            # Read group items
-            group_items = []
-            for i in range(nlines):
-                dat = Line2Int(f.readline())
-                group_items.append(dat[0:3])
-                if len(dat) > 4:
-                    group_items.append(dat[4:7])
-            
-            # Split group in node and element sets
-            nset = []; eset = []
-            for item in group_items:
-                if item[0] == 7:
-                    nset.append(item[1])
-                if item[0] == 8:
-                    eset.append(item[1])
+            # check if there are to be any items in the group. 
+            if nlines == 0:
+                fpos = f.tell()
+                # If not, skip row - or if not empty: let row be
+                # and start next read of Record 1
+                if f.readline().strip():
+                    f.seek(fpos)
 
-            # Store non empty groups
-            if len(nset):
-                nset = FEM.Group(group_name, 7, nset)
-                fem.nsets.append(nset)
-            if len(eset):
-                eset = FEM.Group(group_name, 8, eset)
-                fem.esets.append(eset)
+            else:
+                # Read group items
+                group_items = []
+                for i in range(nlines):
+                    dat = Line2Int(f.readline())
+                    group_items.append(dat[0:3])
+                    if len(dat) > 4:
+                        group_items.append(dat[4:7])
+
+                # Split group in node and element sets
+                nset = []; eset = []
+                for item in group_items:
+                    if item[0] == 7:
+                        nset.append(item[1])
+                    if item[0] == 8:
+                        eset.append(item[1])
+
+                # Store non empty groups
+                if len(nset):
+                    nset = FEM.Group(group_name, 7, nset)
+                    fem.nsets.append(nset)
+                if len(eset):
+                    eset = FEM.Group(group_name, 8, eset)
+                    fem.esets.append(eset)
         else:
             break
     return fem
