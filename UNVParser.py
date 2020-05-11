@@ -1,24 +1,22 @@
 # -*- coding: utf-8 -*-
 
-
 """
-    © Joël Cugnoni, September 2006 - original code, www.caelinux.com
-    © Ihor Mirzov, August 2019 - refactoring
-    Distributed under GNU General Public License v3.0
+© Joël Cugnoni, September 2006 - original code, www.caelinux.com
+© Ihor Mirzov, August 2019 - refactoring
+Distributed under GNU General Public License v3.0
 
-    This is a set of objects & functions to read a Universal File
-    into a simple FEM object structure in order to simplify the
-    conversion of Mesh definitions from UNV to any other format.
+This is a set of objects & functions to read a Universal File
+into a simple FEM object structure in order to simplify the
+conversion of Mesh definitions from UNV to any other format.
 
-    This code is based on two main objects:
-    1) FEM object structure to store nodes, elements and groups.
-    2) UNVParser which provides a simple & modular solution to read
-    some datasets from UNV file and store them in a FEM object structure.
+This code is based on two main objects:
+1) FEM object structure to store nodes, elements and groups.
+2) UNVParser which provides a simple & modular solution to read
+some datasets from UNV file and store them in a FEM object structure.
 
-    UNV format documentation:
-    http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-file-datasets-summary
+UNV format documentation:
+http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-file-datasets-summary
 """
-
 
 import logging, FEM
 FLAG = '    -1'

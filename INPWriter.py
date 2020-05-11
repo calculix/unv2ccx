@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 
-
 """
-    © Joël Cugnoni, September 2006 - original code, www.caelinux.com
-    © Ihor Mirzov, August 2019 - refactoring
-    Distributed under GNU General Public License v3.0
+© Joël Cugnoni, September 2006 - original code, www.caelinux.com
+© Ihor Mirzov, August 2019 - refactoring
+Distributed under GNU General Public License v3.0
 
-    Writes FEM nodes, elements and groups (node and element sets) into INP file.
-"""
-
+Writes FEM nodes, elements and groups
+(node and element sets) into INP file. """
 
 import os, logging, re
 PADDING = ' '*4 # four spaces
-
 
 # Main function
 def write(FEM, filename):
@@ -62,7 +59,6 @@ def write(FEM, filename):
             f.write('*ELSET, ELSET=' + group.name)
             writeGroup(f, group)
 
-
 # Write node or element set
 def writeGroup(f, group):
     for i in range(group.nitems):
@@ -70,7 +66,6 @@ def writeGroup(f, group):
             f.write('\n' + PADDING)
         f.write('{:d}, '.format(group.items[i]))
     f.write('\n')
-
 
 # Convert UNV element type to CalculiX
 def convert_element(unv_element_type):
@@ -168,7 +163,6 @@ def convert_element(unv_element_type):
         return dic[unv_element_type]
     else:
         return None
-
 
 # Map of the nodes between Universal and Calculix elements
 def element_connectivity(ccx_element_type):

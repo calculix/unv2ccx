@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-"""
-    © Ihor Mirzov, April 2019
-    Distributed under GNU General Public License v3.0
+""" © Ihor Mirzov, May 2020
+Distributed under GNU General Public License v3.0
 
-    Usage:
-        python3 tests.py
-"""
+Usage:
+- python3 tests.py
+or 'Ctrl+F5' from VSCode """
 
 import subprocess, os, clean
 
@@ -30,7 +29,9 @@ if (__name__ == '__main__'):
 
     # Convert calculation results
     for filename in listAllFiles('./tests', '.unv'):
-        subprocess.run('python3 unv2ccx.py ' + filename, shell=True)
+        # subprocess.run('python3 unv2ccx.py ' + filename, shell=True)
+        cmd = 'unv2ccx{} {}'.format(extension, filename)
+        subprocess.run(cmd, shell=True)
         # break # one file only
 
     clean.cache()

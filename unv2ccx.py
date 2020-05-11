@@ -1,21 +1,16 @@
 # -*- coding: utf-8 -*-
 
+""" © Ihor Mirzov, August 2019
+Distributed under GNU General Public License v3.0
 
-"""
-    © Ihor Mirzov, August 2019
-    Distributed under GNU General Public License v3.0
+Converts UNV file from Salome to CalculiX INP mesh: reads UNV_file,
+creates an internal FEM object, then writes the INP_file.
 
-    Converts UNV file from Salome to CalculiX INP mesh: reads UNV_file,
-    creates an internal FEM object, then writes the INP_file.
-
-    Usage:
-        python3 unv2ccx.py ./tests-elements/116.unv
-"""
-
+Usage:
+python3 unv2ccx.py ./tests-elements/116.unv """
 
 import os, argparse, logging, shutil, INPWriter
 from UNVParser import *
-
 
 if __name__ == '__main__':
 

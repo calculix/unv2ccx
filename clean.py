@@ -1,28 +1,23 @@
 # -*- coding: utf-8 -*-
 
+""" © Ihor Mirzov, August 2019
+Distributed under GNU General Public License v3.0
 
-"""
-    © Ihor Mirzov, August 2019
-    Distributed under GNU General Public License v3.0
+Routine methods for cleaning up temporary/unused files/folders. """
 
-    Routine methods for cleaning up temporary/unused files/folders.
-"""
-
-
-import os, sys, shutil
-
+import os
+import sys
+import shutil
 
 # Clean screen
 def screen():
     os.system('cls' if os.name=='nt' else 'clear')
-
 
 # Delete cached files
 def cache():
     # os.system('py3clean .')
     if os.path.isdir('__pycache__'):
         shutil.rmtree('__pycache__') # works in Linux as in Windows
-
 
 # Cleaup trash files in startFolder and all subfolders
 def files(startFolder):
