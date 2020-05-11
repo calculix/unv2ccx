@@ -1,4 +1,4 @@
-© Ihor Mirzov, January 2020  
+© Ihor Mirzov, May 2020  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
@@ -24,6 +24,8 @@ Distributed under GNU General Public License v3.0
 Converts [Salome](https://www.salome-platform.org/) .unv file to [CalculiX](http://dhondt.de/) .inp format.
 
 This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests](./tests) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX CAE](https://github.com/calculix/cae) without any errors.
+
+Thanks to [Niclas Stenberg](https://github.com/Xnst) for fixing bug with empty sets.
 
 <br/><br/>
 
