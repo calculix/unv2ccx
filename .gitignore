@@ -1,3 +1,8 @@
-.vscode
-__pycache__
-releases
+.vscode/
+__pycache__/
+dummy
+/releases/
+/examples/*
+!/examples/*.inp
+!/examples/*.unv
+!/examples/*.png

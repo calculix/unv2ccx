@@ -1,4 +1,4 @@
-© Ihor Mirzov, May 2020  
+© Ihor Mirzov, July 2020  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
@@ -7,7 +7,7 @@ Distributed under GNU General Public License v3.0
 
 ---
 
-[Downloads](#downloads) |
+[Downloads](https://github.com/calculix/unv2ccx/releases) |
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
 [Your help](#your-help) |
@@ -23,7 +23,7 @@ Distributed under GNU General Public License v3.0
 
 Converts [Salome](https://www.salome-platform.org/) .unv file to [CalculiX](http://dhondt.de/) .inp format.
 
-This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests](./tests) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX CAE](https://github.com/calculix/cae) without any errors.
+This converter is based on Joël's Cugnoni UNV parser available with [CalculiX Launcher](http://www.calculixforwin.com/) distribution. I allowed myself to slightely improve it and translate into Python 3. INPWriter's methods are fully refactored and now allow to convert beams. See folder [tests](./tests) for list of tested UNV elements. All generated INP files are processed by CalculiX GraphiX and [CalculiX Adanced Environment](https://github.com/calculix/cae) without any errors.
 
 Thanks to [Niclas Stenberg](https://github.com/Xnst) for fixing bug with empty sets.
 
@@ -31,21 +31,15 @@ Thanks to [Niclas Stenberg](https://github.com/Xnst) for fixing bug with empty s
 
 
 
-# Downloads
+# How to use
 
 Download Linux and Windows binaries from the [releases page](https://github.com/calculix/unv2ccx/releases). Binaries don't need to be installed.
-
-<br/><br/>
-
-
-
-# How to use
 
 Result INP-file name is the same as UNV-file name. So only one argument should be passed to the converter:
 
     in Linux:       ./unv2ccx file.unv
     in Windows:     unv2ccx.exe file.unv
-    crossplatform:  python3 unv2ccx.py file.unv
+    crossplatform:  python3 ./src/unv2ccx.py file.unv
 
 For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. The main script is *unv2ccx.py*, it depends on *FEM.py*, *UNVParser.py* and *INPWriter.py* - other files you won't need.
 

@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, September 2019
+""" © Ihor Mirzov, July 2020
 Distributed under GNU General Public License v3.0
 
-Prepare binaries for publishing:
-- python3 make_release.py
-or 'Ctrl+F5' from VSCode """
+Prepare binaries for publishing
+Ctrl+F5 from VSCode to run """
 
-import clean
 import os
 import shutil
 import datetime
 import PyInstaller.__main__
+from src import clean
 
 def copy(src, dst, skip):
     for f in os.listdir(src):
@@ -48,7 +47,7 @@ if __name__ == '__main__':
 
     # Run pyinstaller to create binaries
     args = [
-        './unv2ccx.py',
+        './src/unv2ccx.py',
         '--workpath=' + TEMP,   # temp dir
         '-w',                   # no console during app run
         '--onefile',
@@ -67,7 +66,8 @@ if __name__ == '__main__':
         lines = f.readlines()
     for i in range(len(lines)):
         skip += (lines[i].rstrip().lstrip('*'), )
-    skip += ('.git', '.gitignore', '.py', 'dist')
+    skip += ('.git', '.gitignore', '.py', '.vscode',
+        'bin', 'dist', 'releases', 'src', 'tests')
 
     # Copy files and folders from sources to 'dist'
     copy('.', 'dist', skip)
@@ -76,7 +76,7 @@ if __name__ == '__main__':
     if os.path.isfile(ARCH + '.zip'):
         os.remove(ARCH + '.zip') # delete old
 
-    # Complress whole directory
+    # Compress whole directory
     shutil.make_archive(ARCH, 'zip', 'dist')
 
     # Remove unneeded files and folders
