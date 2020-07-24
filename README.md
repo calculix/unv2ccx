@@ -37,11 +37,11 @@ Download Linux and Windows binaries from the [releases page](https://github.com/
 
 Result INP-file name is the same as UNV-file name. So only one argument should be passed to the converter:
 
-    in Linux:       ./unv2ccx file.unv
-    in Windows:     unv2ccx.exe file.unv
+    in Linux:       ./bin/unv2ccx file.unv
+    in Windows:     /bin/unv2ccx.exe file.unv
     crossplatform:  python3 ./src/unv2ccx.py file.unv
 
-For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. The main script is *unv2ccx.py*, it depends on *FEM.py*, *UNVParser.py* and *INPWriter.py* - other files you won't need.
+For the last command you'll need [Python 3](https://www.python.org/downloads/) to be installed on your OS. No additional libraries needed. The main script is *unv2ccx.py*, it depends on *FEM.py*, *UNVParser.py* and *INPWriter.py*.
 
 <br/><br/>
 
