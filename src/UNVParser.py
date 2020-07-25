@@ -21,7 +21,7 @@ http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehous
 
 import logging
 
-from . import FEM
+import FEM
 FLAG = '    -1'
 
 

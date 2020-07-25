@@ -13,7 +13,11 @@ import time
 import logging
 import subprocess
 
-sys.path.append('.')
+sys_path = os.path.dirname(__file__)
+sys_path = os.path.join(sys_path, '..')
+sys_path = os.path.normpath(sys_path)
+sys.path.append(sys_path)
+
 from src import clean
 from src import unv2ccx
 from log import myHandler, print
