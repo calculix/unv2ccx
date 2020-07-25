@@ -19,7 +19,7 @@ Distributed under GNU General Public License v3.0
 
 
 
-# Salome universal to CalculiX converter (unv to inp)
+# Salome to CalculiX converter (unv to inp)
 
 Converts [Salome](https://www.salome-platform.org/) .unv file to [CalculiX](http://dhondt.de/) .inp format.
 
