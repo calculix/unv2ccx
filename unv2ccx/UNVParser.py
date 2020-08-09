@@ -16,6 +16,10 @@ This code is based on two main objects:
 some datasets from UNV file and store them in a FEM object structure.
 
 UNV format documentation:
+https://docs.plm.automation.siemens.com/tdoc/nx/10/nx_help/#uid:index_advanced:xid602249:id625716:id625821
+or
+http://www2.me.rochester.edu/courses/ME204/nx_help/index.html#uid:index_advanced:xid602249:id625716:id625821:xid457305
+or
 http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-file-datasets-summary
 """
 
