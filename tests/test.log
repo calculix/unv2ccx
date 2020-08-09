@@ -1,71 +1,71 @@
 UNV CONVERTER TEST
 
 ==================================================
-INFO: Parsing ../examples/11.unv
-INFO: Writing ../examples/11.inp
+INFO: Parsing 11.unv
+INFO: Writing 11.inp
 
 ==================================================
-INFO: Parsing ../examples/111.unv
-INFO: Writing ../examples/111.inp
+INFO: Parsing 111.unv
+INFO: Writing 111.inp
 
 ==================================================
-INFO: Parsing ../examples/112.unv
-INFO: Writing ../examples/112.inp
+INFO: Parsing 112.unv
+INFO: Writing 112.inp
 
 ==================================================
-INFO: Parsing ../examples/113.unv
-INFO: Writing ../examples/113.inp
+INFO: Parsing 113.unv
+INFO: Writing 113.inp
 
 ==================================================
-INFO: Parsing ../examples/115.unv
-INFO: Writing ../examples/115.inp
+INFO: Parsing 115.unv
+INFO: Writing 115.inp
 
 ==================================================
-INFO: Parsing ../examples/116.unv
-INFO: Writing ../examples/116.inp
+INFO: Parsing 116.unv
+INFO: Writing 116.inp
 
 ==================================================
-INFO: Parsing ../examples/118.unv
-INFO: Writing ../examples/118.inp
+INFO: Parsing 118.unv
+INFO: Writing 118.inp
 
 ==================================================
-INFO: Parsing ../examples/22.unv
-INFO: Writing ../examples/22.inp
+INFO: Parsing 22.unv
+INFO: Writing 22.inp
 
 ==================================================
-INFO: Parsing ../examples/41.unv
-INFO: Writing ../examples/41.inp
+INFO: Parsing 41.unv
+INFO: Writing 41.inp
 
 ==================================================
-INFO: Parsing ../examples/42.unv
-INFO: Writing ../examples/42.inp
+INFO: Parsing 42.unv
+INFO: Writing 42.inp
 
 ==================================================
-INFO: Parsing ../examples/44.unv
-INFO: Writing ../examples/44.inp
+INFO: Parsing 44.unv
+INFO: Writing 44.inp
 
 ==================================================
-INFO: Parsing ../examples/45.unv
-INFO: Writing ../examples/45.inp
+INFO: Parsing 45.unv
+INFO: Writing 45.inp
 
 ==================================================
-INFO: Parsing ../examples/Baffle-2D.unv
-INFO: Writing ../examples/Baffle-2D.inp
+INFO: Parsing Baffle-2D.unv
+INFO: Writing Baffle-2D.inp
 
 ==================================================
-INFO: Parsing ../examples/Baffle-3D.unv
-INFO: Writing ../examples/Baffle-3D.inp
+INFO: Parsing Baffle-3D.unv
+INFO: Writing Baffle-3D.inp
 
 ==================================================
-INFO: Parsing ../examples/CylinderShell.unv
-INFO: Writing ../examples/CylinderShell.inp
+INFO: Parsing CylinderShell.unv
+INFO: Writing CylinderShell.inp
 
 ==================================================
-INFO: Parsing ../examples/CylinderSolid.unv
-INFO: Writing ../examples/CylinderSolid.inp
+INFO: Parsing CylinderSolid.unv
+INFO: Writing CylinderSolid.inp
 
 ==================================================
-INFO: Parsing ../examples/empty_set.unv
-INFO: Writing ../examples/empty_set.inp
+INFO: Parsing empty_set.unv
+INFO: Writing empty_set.inp
 
-Total 1.2 seconds
+Total 1.4 seconds

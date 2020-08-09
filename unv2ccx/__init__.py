@@ -5,7 +5,7 @@
 Distributed under GNU General Public License v3.0
 
 Converts UNV file from Salome to CalculiX INP mesh:
-python3 ./src/unv2ccx.py ./examples/116.unv
+python3 ./unv2ccx/__init__.py ./examples/116.unv
 
 Reads UNV_file, creates an internal FEM object,
 then writes the INP_file. """
@@ -15,7 +15,8 @@ import sys
 import argparse
 import logging
 
-sys_path = os.path.dirname(__file__)
+sys_path = os.path.abspath(__file__)
+sys_path = os.path.dirname(sys_path)
 sys.path.append(sys_path)
 import clean
 import UNVParser

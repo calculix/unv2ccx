@@ -10,7 +10,8 @@ import sys
 import logging
 
 
-log_file = os.path.join(os.path.dirname(__file__), 'test.log')
+log_file = os.path.dirname(os.path.abspath(__file__))
+log_file = os.path.join(log_file, 'test.log')
 
 
 # Configure logging to emit messages via 'print' method

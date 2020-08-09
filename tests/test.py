@@ -13,13 +13,14 @@ import time
 import logging
 import subprocess
 
-sys_path = os.path.dirname(__file__)
+sys_path = os.path.abspath(__file__)
+sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
 sys_path = os.path.normpath(sys_path)
 sys.path.append(sys_path)
 
-from src import clean
-from src import unv2ccx
+import unv2ccx
+from unv2ccx import clean
 from log import myHandler, print
 
 # How many files to process
@@ -66,8 +67,8 @@ if (__name__ == '__main__'):
     logging.getLogger().addHandler(myHandler())
     logging.getLogger().setLevel(logging.INFO)
 
-    folder = os.path.join(os.path.dirname(__file__),
-        '..', 'examples')
+    folder = os.path.dirname(os.path.abspath(__file__))
+    folder = os.path.join(folder, '..', 'examples')
     # test_binary_in(folder)
     convert_unv_files_in(folder)
 
