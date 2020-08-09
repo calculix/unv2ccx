@@ -68,7 +68,7 @@ if (__name__ == '__main__'):
     logging.getLogger().setLevel(logging.INFO)
 
     folder = os.path.dirname(os.path.abspath(__file__))
-    folder = os.path.join(folder, '..', 'examples')
+    folder = os.path.join(folder, 'examples')
     # test_binary_in(folder)
     convert_unv_files_in(folder)
 
