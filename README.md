@@ -47,7 +47,7 @@ Result INP-file name is the same as UNV-file name. So only one argument should b
 
 # Screenshots
 
-2D UNV elements converted to INP:  
+1D and 2D UNV elements converted to INP:  
 ![UNV 2D](./Compound_Mesh_2D_unv.png "UNV 2D")
 ![INP 2D](./Compound_Mesh_2D_inp.png "INP 2D")
 
