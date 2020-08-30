@@ -35,4 +35,3 @@ class Group:
         self.type = gtype
         self.items = items
         self.nitems = len(items)
-

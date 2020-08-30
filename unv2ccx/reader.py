@@ -12,15 +12,11 @@ conversion of Mesh definitions from UNV to any other format.
 
 This code is based on two main objects:
 1) FEM object structure to store nodes, elements and groups.
-2) UNVParser which provides a simple & modular solution to read
+2) UNVReader which provides a simple & modular solution to read
 some datasets from UNV file and store them in a FEM object structure.
 
 UNV format documentation:
 https://docs.plm.automation.siemens.com/tdoc/nx/10/nx_help/#uid:index_advanced:xid602249:id625716:id625821
-or
-http://www2.me.rochester.edu/courses/ME204/nx_help/index.html#uid:index_advanced:xid602249:id625716:id625821:xid457305
-or
-http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-file-datasets-summary
 """
 
 import logging
@@ -29,9 +25,8 @@ import FEM
 FLAG = '    -1'
 
 
-# Universal file parser class
-class UNVParser:
-
+# Universal file reader
+class UNV:
 
     def __init__(self, filename):
         self.file = None
@@ -42,7 +37,6 @@ class UNVParser:
         # List of supported datasets and corresponding dataset handler functions
         self.datasetsIds = [2411, 2412, 2467, 2477]
         self.datasetsHandlers = [UNV2411Reader, UNV2412Reader, UNV2467Reader, UNV2467Reader]
-
 
     # Read file & fill the section list
     def scanfile(self):
@@ -65,9 +59,8 @@ class UNVParser:
         # Rewind file
         self.file.seek(0)
 
-
-    # Parse UNV file to fill the FEM data structure
-    def parse(self):
+    # Read UNV file to fill the FEM data structure
+    def read(self):
         self.file = open(self.filename, 'r')
         self.scanfile()
         for sectionId, offset in self.sections:
@@ -80,7 +73,6 @@ class UNVParser:
 
 
 # Reads an UNV2411 dataset (nodes) from file and store data in FEM object
-# http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2411
 def UNV2411Reader(f, fem):
     while True:
         line1 = f.readline()
@@ -93,11 +85,11 @@ def UNV2411Reader(f, fem):
             fem.nodes.append(n)
         else:
             break
+    logging.info('{} nodes'.format(len(fem.nodes)))
     return fem
 
 
 # Reads an UNV2412 dataset (elements) from file and store data in FEM object
-# http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2412
 def UNV2412Reader(f, fem):
     SpecialElemTypes = [11] # types of elements which are defined on 3 lines
     while True:
@@ -120,11 +112,11 @@ def UNV2412Reader(f, fem):
             fem.elements.append(e)
         else:
             break
+    logging.info('{} elements'.format(len(fem.elements)))
     return fem
 
 
 # Reads an UNV2467 dataset (groups) from file and store data in FEM object
-# http://sdrl.uc.edu/sdrl/referenceinfo/universalfileformats/file-format-storehouse/universal-dataset-number-2467
 def UNV2467Reader(f, fem):
     while True:
         # Read Record 1:
@@ -172,6 +164,8 @@ def UNV2467Reader(f, fem):
                     fem.esets.append(eset)
         else:
             break
+    logging.info('{} nsets'.format(len(fem.nsets)))
+    logging.info('{} esets'.format(len(fem.esets)))
     return fem
 
 

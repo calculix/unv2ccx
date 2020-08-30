@@ -55,15 +55,15 @@ def write(FEM, file_name):
         # Write node sets
         for group in FEM.nsets:
             f.write('*NSET, NSET=' + group.name)
-            writeGroup(f, group)
+            write_group(f, group)
 
         # Write element sets
         for group in FEM.esets:
             f.write('*ELSET, ELSET=' + group.name)
-            writeGroup(f, group)
+            write_group(f, group)
 
 # Write node or element set
-def writeGroup(f, group):
+def write_group(f, group):
     for i in range(group.nitems):
         if i % 8 == 0:
             f.write('\n' + PADDING)

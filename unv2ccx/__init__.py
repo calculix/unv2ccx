@@ -19,8 +19,8 @@ sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys.path.insert(0, sys_path)
 import clean
-import UNVParser
-import INPWriter
+import reader
+import writer
 
 
 class Converter:
@@ -31,15 +31,15 @@ class Converter:
 
     def run(self):
 
-        # Parse UNV file
+        # Read UNV file
         base_name = os.path.basename(self.unv_file_name)
-        logging.info('Parsing ' + base_name)
-        fem = UNVParser.UNVParser(self.unv_file_name).parse()
+        logging.info('Reading ' + base_name)
+        fem = reader.UNV(self.unv_file_name).read()
 
         # Write INP file
         base_name = os.path.basename(self.inp_file_name)
         logging.info('Writing ' + base_name)
-        INPWriter.write(fem, self.inp_file_name)
+        writer.write(fem, self.inp_file_name)
 
 
 if __name__ == '__main__':
@@ -50,10 +50,10 @@ if __name__ == '__main__':
         format='%(levelname)s: %(message)s')
 
     # Command line parameters
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filename', type=str,
+    ap = argparse.ArgumentParser()
+    ap.add_argument('filename', type=str,
         help='UNV file name with extension')
-    args = parser.parse_args()
+    args = ap.parse_args()
 
     # Create converter and run it
     unv2ccx = Converter(args.filename)
