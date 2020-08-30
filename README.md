@@ -47,12 +47,14 @@ Result INP-file name is the same as UNV-file name. So only one argument should b
 
 # Screenshots
 
-1D and 2D UNV elements converted to INP:  
+1D and 2D UNV elements in Salome:  
 ![UNV 2D](./Compound_Mesh_2D_unv.png "UNV 2D")
+Converted 1D and 2D elements in CalculiX GraphiX:  
 ![INP 2D](./Compound_Mesh_2D_inp.png "INP 2D")
 
-3D UNV elements converted to INP:  
+3D UNV elements in Salome:  
 ![UNV 3D](./Compound_Mesh_3D_unv.png "UNV 3D")
+Converted 3D elements in CalculiX GraphiX:  
 ![INP 3D](./Compound_Mesh_3D_inp.png "INP 3D")
 
 <br/><br/>
