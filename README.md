@@ -85,14 +85,25 @@ In your code use unv2ccx package in this way:
     c = unv2ccx.Converter(unv_file_name)
     c.run()
 
-Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
+If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net/):
+
+    pip3 install nuitka
+    
+    In Windows:
+    set CC=C:\\MinGW64\\mingw64\\bin\\gcc.exe
+    python3 -m nuitka --follow-imports --mingw64 __init__.py
+
+    In Linux:
+    python3 -m nuitka --follow-imports __init__.py
+
+If you have Python version < 3.8 create binary with [pyinstaller](https://www.pyinstaller.org/):
 
     pip3 install pyinstaller
-    pyinstaller ./unv2ccx/__init__.py --onefile
+    pyinstaller __init__.py --onefile
 
-Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create Python packages:
+Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create packages for [pypi.org](https://pypi.org/):
 
-    python3 -m pip install --user --upgrade setuptools wheel
+    python3 -m pip install --user --upgrade setuptools wheel twine
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
 
