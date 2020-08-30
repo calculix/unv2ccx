@@ -3,14 +3,15 @@
 
 """ © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
-Logging handler for all my projects """
+Logging handler for my projects """
 
 import os
 import sys
 import logging
 
 
-log_file = os.path.dirname(os.path.abspath(__file__))
+log_file = os.path.abspath(__file__)
+log_file = os.path.dirname(log_file)
 log_file = os.path.join(log_file, 'test.log')
 
 
@@ -36,3 +37,19 @@ def print(*args):
     with open(log_file, 'a') as f:
         f.write(line)
     sys.stdout.write(line)
+
+
+# Infininte cycle to read process'es stdout
+def read_and_log(stdout):
+    while True:
+        line = stdout.readline()
+        if os.name == 'nt':
+            line = line.replace(b'\x0c', b'') # clear screen Windows
+            line = line.replace(b'\r', b'') # \n Windows
+        else:
+            line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen Linux
+        if line != b'':
+            line = line.decode().rstrip()
+            print(line)
+        else:
+            break
