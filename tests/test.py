@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, July 2020
+""" © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
 Test UNV converter on examples
@@ -17,7 +17,7 @@ sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
 sys_path = os.path.normpath(sys_path)
-sys.path.append(sys_path)
+sys.path.insert(0, sys_path)
 
 import unv2ccx
 from unv2ccx import clean

@@ -1,4 +1,4 @@
-© Ihor Mirzov, July 2020  
+© Ihor Mirzov, 2019-2020  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
