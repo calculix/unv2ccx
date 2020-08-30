@@ -1,8 +1,10 @@
 .vscode/
 __pycache__/
-dummy
 /bin/
 /releases/
+/bin/
+/releases/
+dummy
 /examples/*
 !/examples/*.inp
 !/examples/*.unv
