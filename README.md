@@ -65,6 +65,7 @@ Converted 3D elements in CalculiX GraphiX:
 
 Please, you may:
 
+- Star this project.
 - Simply use this software and ask questions.
 - Share your models and screenshots.
 - Report problems by [posting issues](https://github.com/calculix/unv2ccx/issues).
@@ -115,5 +116,6 @@ Read [here](https://packaging.python.org/tutorials/packaging-projects/) about ho
 
 # TODO
 
-Multiprocessing for tests.
-
+- Multiprocessing for tests.
+- Correctly convert UNV surface set into INP surface.
+- Use pyuff module
