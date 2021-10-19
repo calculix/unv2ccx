@@ -155,7 +155,7 @@ def UNV2467Reader(f, fem):
                     if item[0] == 8:
                         eset.append(item[1])
 
-                # Store non empty groups
+                # Store non-empty groups
                 if len(nset):
                     nset = FEM.Group(group_name, 7, nset)
                     fem.nsets.append(nset)

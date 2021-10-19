@@ -1,5 +1,8 @@
-© Ihor Mirzov, 2019-2020  
+© Ihor Mirzov, 2019-2021  
 Distributed under GNU General Public License v3.0
+
+[![PyPi Version](https://img.shields.io/pypi/v/unv2ccx.svg)](https://pypi.org/project/unv2ccx)
+[![PyPi downloads](https://img.shields.io/pypi/dm/unv2ccx.svg)](https://pypistats.org/packages/unv2ccx)
 
 <br/><br/>
 
