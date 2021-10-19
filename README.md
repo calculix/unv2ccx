@@ -2,8 +2,7 @@
 Distributed under GNU General Public License v3.0
 
 [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/unv2ccx)
-[![PyPi downloads](https://img.shields.io/pypi/dm/unv2ccx.svg)](https://pypistats.org/packages/unv2ccx)
-
+[![PyPi downloads](https://img.shields.io/pypi/dm/unv2ccx.svg)](https://pypistats.org/packages/unv2ccx)  
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/calculix/unv2ccx)
 [![Github All Releases](https://img.shields.io/github/downloads/calculix/unv2ccx/total.svg)](https://github.com/calculix/unv2ccx/releases)
 
