@@ -1,8 +1,11 @@
 © Ihor Mirzov, 2019-2021  
 Distributed under GNU General Public License v3.0
 
-[![PyPi Version](https://img.shields.io/pypi/v/unv2ccx.svg)](https://pypi.org/project/unv2ccx)
+[![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/unv2ccx)
 [![PyPi downloads](https://img.shields.io/pypi/dm/unv2ccx.svg)](https://pypistats.org/packages/unv2ccx)
+
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/calculix/unv2ccx)
+[![Github All Releases](https://img.shields.io/github/downloads/calculix/unv2ccx/total.svg)](https://github.com/calculix/unv2ccx/releases)
 
 <br/><br/>
 
@@ -14,7 +17,7 @@ Distributed under GNU General Public License v3.0
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
 [Your help](#your-help) |
-[For developers](#for-developers)
+[For developers](#for-developers) |
 [TODO](#todo)
 
 ---
@@ -79,9 +82,12 @@ Please, you may:
 
 # For developers
 
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/unv2ccx.svg)](https://www.python.org/downloads/)
+[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
+
 To run this converter from source you'll need [Python 3](https://www.python.org/downloads/).
 
-Install package with command:
+Install *unv2ccx* package with command:
 
     pip3 install unv2ccx
 
