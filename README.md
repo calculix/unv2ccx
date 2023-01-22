@@ -1,4 +1,4 @@
-© Ihor Mirzov, 2019-2021  
+© Ihor Mirzov, 2019-2023  
 Distributed under GNU General Public License v3.0
 
 [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/unv2ccx)
@@ -127,3 +127,5 @@ Read [here](https://packaging.python.org/tutorials/packaging-projects/) about ho
 - Multiprocessing for tests.
 - Correctly convert UNV surface set into INP surface.
 - Use pyuff module
+- Support keyword *HEADING
+- Support keyword *SURFACE
