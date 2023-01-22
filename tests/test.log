@@ -193,4 +193,13 @@ INFO: 3 esets
 INFO: Writing Yikun_Wang_Compound_Mesh.inp
 DEBUG: Using S4 connectivity for CPS4.
 
-Total 1.3 seconds
+==================================================
+21: default.unv
+INFO: Reading default.unv
+INFO: 116 nodes
+INFO: 75 elements
+INFO: 10 nsets
+INFO: 7 esets
+INFO: Writing default.inp
+
+Total 1.8 seconds

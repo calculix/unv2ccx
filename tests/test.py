@@ -12,6 +12,7 @@ import sys
 import time
 import logging
 import subprocess
+import traceback
 
 sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
@@ -26,6 +27,7 @@ from log import myHandler, print, read_and_log
 # How many files to process
 limit = 10000
 
+
 # List all .ext-files here and in all subdirectories
 def scan_all_files_in(start_folder, ext):
     all_files = []
@@ -37,6 +39,7 @@ def scan_all_files_in(start_folder, ext):
             ff = os.path.normpath(f.path)
             all_files.append(ff)
     return sorted(all_files)[:limit]
+
 
 # Convert UNV files
 def convert_unv_files_in(folder):
@@ -50,6 +53,7 @@ def convert_unv_files_in(folder):
             unv2ccx.Converter(file_name).run()
         except:
             logging.error(traceback.format_exc())
+
 
 # Convert calculation results with binaries
 def test_binary_in(folder):
@@ -72,6 +76,7 @@ def test_binary_in(folder):
             read_and_log(process.stdout)
         except:
             logging.error(traceback.format_exc())
+
 
 # Run
 if __name__ == '__main__':

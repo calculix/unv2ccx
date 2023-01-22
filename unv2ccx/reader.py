@@ -103,7 +103,7 @@ def UNV2412Reader(f, fem):
                 # 1D elements have an additionnal line in definition
                 nodes = Line2Int(f.readline())
             else:
-                # Standard elements have connectivities on secnd line
+                # Standard elements have connectivities on second line
                 nodes = Line2Int(line2)
                 while nnodes > 8:
                     nodes.extend(Line2Int(f.readline()))
@@ -130,7 +130,7 @@ def UNV2467Reader(f, fem):
             nitems = dataline[-1]
             nlines = int((nitems + 1) / 2)
 
-            # check if there are to be any items in the group. 
+            # Check if there are any items in the group
             if nlines == 0:
                 fpos = f.tell()
                 # If not, skip row - or if not empty: let row be

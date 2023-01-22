@@ -9,7 +9,6 @@ Distributed under GNU General Public License v3.0
 Writes FEM nodes, elements and groups
 (node and element sets) into INP file. """
 
-import os
 import logging
 import re
 
@@ -22,7 +21,7 @@ def write(FEM, file_name):
         # Nodes
         f.write('*NODE, NSET=NALL\n')
         for node in FEM.nodes:
-            f.write(PADDING + '{:d}, {:.10e}, {:.10e}, {:.10e}\n'\
+            f.write(PADDING + '{:d}, {:>25.16E}, {:>25.16E}, {:>25.16E}\n'\
                 .format(node.num, node.coords[0], node.coords[1], node.coords[2]))
 
         # Split element list by types
