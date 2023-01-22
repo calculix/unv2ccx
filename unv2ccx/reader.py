@@ -3,7 +3,7 @@
 
 """
 © Joël Cugnoni, September 2006 - original code, www.caelinux.com
-© Ihor Mirzov, 2019-2020 - refactoring
+© Ihor Mirzov, 2019-2023 - refactoring
 Distributed under GNU General Public License v3.0
 
 This is a set of objects & functions to read a Universal File
