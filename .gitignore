@@ -5,6 +5,7 @@ __pycache__/
 /bin/
 /releases/
 dummy
+*.log
 /examples/*
 !/examples/*.inp
 !/examples/*.unv
